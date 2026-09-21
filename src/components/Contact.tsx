@@ -30,24 +30,20 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      const body = new URLSearchParams({
-        _domain: 'portafolio-salikzz.vercel.app',
-        _to: 'wsrr1095@outlook.es',
-        name,
-        email,
-        message,
-        _subject: 'Nuevo mensaje desde tu portafolio',
-        _template: 'table',
-        _replyto: email,
-      });
-
-      const response = await fetch('https://api.formsubmit.cc/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/wsrr1095@outlook.es', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: body.toString(),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: 'Nuevo mensaje desde tu portafolio',
+          _template: 'table',
+          _replyto: email,
+        }),
       });
 
       if (!response.ok) throw new Error('Submission failed');
