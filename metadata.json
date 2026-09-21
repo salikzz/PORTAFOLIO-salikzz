@@ -1,0 +1,6 @@
+{
+  "name": "Santiago Rodríguez — Portafolio",
+  "description": "Portafolio personal de Santiago Rodríguez, diseñador multimedia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
