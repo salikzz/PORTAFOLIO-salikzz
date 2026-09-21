@@ -30,7 +30,7 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/wsrr1095@outlook.es', {
+      const response = await fetch('https://formsubmit.co/ajax/df4f7bfd414d3244b09e84241842630f', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
