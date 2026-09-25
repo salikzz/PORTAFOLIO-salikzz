@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeft, ChevronLeft, ChevronRight, X, Play } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, X, Play, Instagram } from 'lucide-react';
 import { useLang } from '@/context/LangContext';
 import type { Project, Category } from '@/data/projects';
 
@@ -53,6 +53,28 @@ export default function ProjectDetail({ project, onClose }: ProjectDetailProps) 
             <h1 className="mt-3 font-display text-3xl font-bold text-warm-white sm:text-4xl lg:text-5xl">{project.title}</h1>
           </div>
         </div>
+
+        {['jeep', 'ram', 'fiat', 'zeekr'].includes(project.id) && (
+          <a
+            href={{
+              jeep: 'https://www.instagram.com/manadajeep/?hl=es-la',
+              ram: 'https://www.instagram.com/ram_colombia/?hl=es-la',
+              fiat: 'https://www.instagram.com/fiatcol/?hl=es-la',
+              zeekr: 'https://www.instagram.com/zeekrcol/?hl=es-la',
+            }[project.id]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-10 inline-flex items-center gap-3 rounded-xl border border-warm-white/10 bg-warm-white/[0.035] px-4 py-3 text-left transition-all duration-300 hover:border-flare/40 hover:bg-warm-white/[0.06]"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ember/15 text-flare">
+              <Instagram size={18} />
+            </span>
+            <span>
+              <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-warm-400">Instagram</span>
+              <span className="block text-sm font-semibold text-warm-white">Ver perfil de {project.title}</span>
+            </span>
+          </a>
+        )}
 
         <div className="relative mb-14 overflow-hidden rounded-[28px] border border-warm-white/10 bg-transparent shadow-[0_30px_100px_-35px_rgba(229,37,33,0.35)]">
           <div className="flex w-full items-center justify-center">
